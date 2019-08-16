@@ -8,6 +8,7 @@ import configureStore from "./store/configureStore";
 import {addExpense} from "./actions/expenses";
 import {setTextFilter} from "./actions/filters";
 import getVisibleExpenses from "./selectors/expenses"
+import "react-dates/lib/css/_datepicker.css"
 
 
 const store = configureStore();
@@ -23,7 +24,7 @@ const store = configureStore();
 
 
 store.dispatch(addExpense({description: "Water Bill", amount: 4500}));
-store.dispatch(addExpense({description: "Gas Bill", amount:3340, createdAt: 1000 }));
+store.dispatch(addExpense({description: "Gas Bill", createdAt: 1000 }));
 store.dispatch(addExpense({description: "rent", amount: 109500}));
 
 

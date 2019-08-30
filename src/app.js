@@ -9,7 +9,8 @@ import {startSetExpenses} from "./actions/expenses";
 import {setTextFilter} from "./actions/filters";
 import getVisibleExpenses from "./selectors/expenses"
 import "react-dates/lib/css/_datepicker.css"
-import "./firebase/firebase"
+import {firebase} from "./firebase/firebase"
+import { identity } from "rxjs";
 
 
 const store = configureStore();
@@ -43,3 +44,11 @@ store.dispatch(startSetExpenses()).then(() => {
 })
 
 
+firebase.auth().onAuthStateChanged((user) => {
+    if(user){
+        console.log("log in")
+    }
+    else{
+        console.log("log out")
+    }
+})

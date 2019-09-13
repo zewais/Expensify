@@ -6,11 +6,16 @@ import {startLogout} from "../actions/auth"
 
 
 export const Header = ({startLogout}) => (
-    <header>
-        <h1>Expensify</h1>
-        <NavLink to="/dashboard" activeClassName="is-active" exact={true}>Dashboard - </NavLink>
-        <NavLink to="/create" activeClassName="is-active">Create - </NavLink>
-        <button onClick={startLogout}>Logout</button>
+    <header className="header">
+    <div className="content-container">
+    <div className="header__content">
+        <Link className="header__title" to="/dashboard" exact={true}>
+            <h1>Expensify</h1>
+        </Link>
+        <button className="button-layout button-layout__link" onClick={startLogout}>Logout</button>
+    </div>
+    </div>
+        
     </header>
 );
 
